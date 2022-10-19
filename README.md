@@ -1,6 +1,6 @@
 # FFC Tech Spike Curtomer Registry
 
-> Application Manager for Animal Health and Welfare Review
+> Enhanced customer data store with a microservice service interface which links existing customer data (RPA Customer and Defra Customer) with wider Future Farming data. 
 
 ## Prerequisites
 
