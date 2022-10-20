@@ -21,7 +21,10 @@ overridden by build and release pipelines.
 
 | Name                                            | Description                                                                                      |
 | ----                                            | -----------                                                                                      |
-|                              |                       |
+|COSMOS_ENDPOINT|URI of the CosmosDb|
+|COSMOS_KEY|The primary key for the CosmosDb|
+|COSMOS_DATABASE|Id of the CosmosDb database|
+|COSMOS_CONTAINER|Id of the CosmosDb container|
 
 
 ## Running the application
