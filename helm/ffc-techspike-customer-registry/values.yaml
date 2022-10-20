@@ -34,6 +34,11 @@ container:
   limitCpu: 40m
   port: 3000
 
+ingress:
+  class: nginx
+  endpoint: ffc-techspike-customer-registry
+  server: value.replaced.from.app.config
+
 livenessProbe:
   path: /healthz
   port: 3000
