@@ -23,6 +23,10 @@ deployment:
   minReadySeconds: 0
 
 container:
+  cosmosEndpoint:
+  cosmoskey:
+  cosmosDatabase:
+  cosmosContainer:
   imagePullPolicy: IfNotPresent
   requestMemory: 10Mi
   requestCpu: 10m
