@@ -23,12 +23,21 @@ deployment:
   minReadySeconds: 0
 
 container:
+  cosmosEndpoint:
+  cosmoskey:
+  cosmosDatabase:
+  cosmosContainer:
   imagePullPolicy: IfNotPresent
   requestMemory: 10Mi
   requestCpu: 10m
   limitMemory: 40Mi
   limitCpu: 40m
   port: 3000
+
+ingress:
+  class: nginx
+  endpoint: ffc-techspike-customer-registry
+  server: value.replaced.from.app.config
 
 livenessProbe:
   path: /healthz
@@ -43,3 +52,7 @@ readinessProbe:
   initialDelaySeconds: 10
   periodSeconds: 10
   failureThreshold: 3
+
+service:
+  port: 80
+  type: ClusterIP

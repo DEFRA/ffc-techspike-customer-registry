@@ -14,3 +14,8 @@ services:
       - ./test-output:/home/node/test-output
       - ./jest.config.js:/home/node/jest.config.js
       - ./package.json:/home/node/package.json
+    environment:
+      COSMOS_ENDPOINT: https://cosmos:443
+      COSMOS_KEY: test-key
+      COSMOS_DATABASE: test-database
+      COSMOS_CONTAINER: test-container

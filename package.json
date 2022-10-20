@@ -1,6 +1,6 @@
 {
   "name": "ffc-techspike-customer-registry",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "microservice for serving an enhance customer dataset",
   "homepage": "https://github.com/DEFRA/ffc-techspike-customer-registry",
   "main": "app/index.js",
@@ -17,8 +17,10 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
+    "@azure/cosmos": "^3.3.0",
     "@hapi/hapi": "^20.2.1",
-    "applicationinsights": "^2.2.1"
+    "applicationinsights": "^2.2.1",
+    "joi": "^17.4.2"
   },
   "devDependencies": {
     "jest": "^27.5.1",

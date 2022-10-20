@@ -4,4 +4,7 @@ data:
   NODE_ENV: {{ quote .Values.environment }}
   PORT: {{ quote .Values.container.port }}
   APPINSIGHTS_CLOUDROLE: {{ quote .Values.name }}
+  COSMOS_ENDPOINT: {{ quote .Values.container.cosmosEndpoint }}
+  COSMOS_DATABASE: {{ quote .Values.container.cosmosDatabase }}
+  COSMOS_CONTAINER: {{ quote .Values.container.cosmosContainer }}
 {{- end -}}
