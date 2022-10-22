@@ -1,5 +1,5 @@
 const Graphi = require('graphi')
-const schema = require('../graphql/schema')
+const schema = require('../graphql/customer-schema')
 
 module.exports = {
   plugin: Graphi,
