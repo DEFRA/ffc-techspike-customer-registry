@@ -27,8 +27,25 @@ const queryContainer = async (sbi) => {
   }
 
   return resultString
+} 
+
+const createItem = async (itemBody) => {
+  const { item } = await client
+  .database(databaseId)
+  .container(containerId)
+  .items.upsert(itemBody)
+console.log(`Created family item with id:\n${itemBody.id}\n`)
+}
+
+const updateItem = async (itemBody) => {
+  const { item } = await client
+    .database(databaseId)
+    .container(containerId)
+    .item(itemBody.id, itemBody.partitionKey)
+    .replace(itemBody)
 }
 
 module.exports = {
-  queryContainer
+  queryContainer,
+  createItem
 }
