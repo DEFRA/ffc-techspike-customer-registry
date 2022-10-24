@@ -47,5 +47,6 @@ const updateItem = async (itemBody) => {
 
 module.exports = {
   queryContainer,
-  createItem
+  createItem, 
+  updateItem
 }
