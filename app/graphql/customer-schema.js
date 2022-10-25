@@ -1,9 +1,9 @@
 const graphql = require('graphql')
 const { GraphQLObjectType, GraphQLNonNull, GraphQLInt, GraphQLString, GraphQLSchema } = graphql
-const customerType = require('./customer-type')
-const customerTypes = require('./customers-type')
-const customerResolver = require('./customer-resolver')
-const customersResolver = require('./customers-resolver')
+const customerType = require('./customer/customer-type')
+const customerTypes = require('./customer/customers-type')
+const customerResolver = require('./customer/customer-resolver')
+const customersResolver = require('./customer/customers-resolver')
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({

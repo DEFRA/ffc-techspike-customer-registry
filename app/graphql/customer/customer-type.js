@@ -1,7 +1,7 @@
 const graphql = require('graphql')
 const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLID } = graphql
-const schemeType = require('./scheme-type')
-const historyType = require('./history-type')
+const schemeType = require('../scheme/scheme-type')
+const historyType = require('../history/history-type')
 
 const customerType = new GraphQLObjectType({
   name: 'Customer',
