@@ -8,7 +8,6 @@ const customersResolver = require('./customers-resolver')
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'RootQuery',
-    description: 'Root query for the customer schema',
     fields: {
       customer: {
         type: customerType,
@@ -16,14 +15,14 @@ const schema = new GraphQLSchema({
         args: {
           sbi: { type: new GraphQLNonNull(GraphQLInt), description: 'Single Business Identifier (SBI)' }
         },
-        resolve: (parent, args) => customerResolver(parent, args)
+        resolve: (parent, args, context, info) => customerResolver(parent, args, context, info)
       },
       customers: {
         type: customerTypes,
         description: 'Get a list of customers',
         args: {
           maxItemCount: { type: GraphQLInt, description: 'The max item count for each page (default: 10 and max: 50)' },
-          nextPageToken: { type: GraphQLString, description: 'A Continuation token used as a bookmark for the query’s progress' }
+          nextPageToken: { type: GraphQLString, description: 'A continuation token used as a bookmark for the query’s progress' }
         },
         resolve: (parent, args) => customersResolver(parent, args)
       }

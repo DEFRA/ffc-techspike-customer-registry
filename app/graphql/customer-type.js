@@ -1,6 +1,7 @@
 const graphql = require('graphql')
 const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLID } = graphql
 const schemeType = require('./scheme-type')
+const historyType = require('./history-type')
 
 const customerType = new GraphQLObjectType({
   name: 'Customer',
@@ -14,7 +15,8 @@ const customerType = new GraphQLObjectType({
     address: { type: GraphQLString, description: 'Customers address' },
     createdOn: { type: GraphQLString, description: 'The date the customer was created' },
     updatedOn: { type: GraphQLString, description: 'The date the customer was last updated' },
-    schemes: { type: new GraphQLList(schemeType), description: 'The schemes the customer is enrolled in' }
+    schemes: { args: { name: { type: GraphQLString } }, type: new GraphQLList(schemeType), description: 'The schemes the customer is enrolled in' },
+    history: { type: new GraphQLList(historyType), description: 'The history of the customer' }
   })
 })
 

@@ -18,11 +18,14 @@
   "license": "OGL-UK-3.0",
   "dependencies": {
     "@azure/cosmos": "^3.3.0",
+    "@azure/data-tables": "^13.0.1",
+    "@azure/identity": "^2.0.2",
     "@hapi/hapi": "^20.2.1",
     "@hapi/inert": "^6.0.3",
     "@hapi/vision": "^6.1.0",
     "applicationinsights": "^2.2.1",
     "graphi": "^9.0.2",
+    "graphql-fields": "^2.0.3",
     "joi": "^17.4.2"
   },
   "devDependencies": {
