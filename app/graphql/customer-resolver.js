@@ -10,10 +10,13 @@ const checkFields = (info, propertyName) => {
 const checkArgs = (info, propertyName) => {
   const fieldsWithSubFieldsArgs = graphqlFields(info, {}, { processArguments: true })
   const args = fieldsWithSubFieldsArgs[propertyName]?.__arguments
-  console.log(args.map(arg => {
-    const keyName = Object.keys(arg)[0]
-    return { field: keyName, value: arg[keyName].value }
-  }))
+
+  if (args) {
+    console.log(args.map(arg => {
+      const keyName = Object.keys(arg)[0]
+      return { field: keyName, value: arg[keyName].value }
+    }))
+  }
 }
 
 module.exports = async (parent, args, context, info) => {
