@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { queryContainer } = require('../repository/customer')
+const { queryCustomer } = require('../repository/customer')
 const sbiSchema = require('./schemas/sbi')
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
   },
   handler: async (request, h) => {
     const sbi = request.params.sbi
-    const customer = await queryContainer(sbi)
+    const customer = await queryCustomer(sbi)
     return h.response(customer ?? JSON.parse(customer)).code(200)
   }
 }

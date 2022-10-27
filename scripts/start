@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 if [ -z "$(docker network ls --filter name=^ffc-techspike$ --format={{.Name}})" ]; then
   echo "Creating ffc-techspike Docker network"
   docker network create ffc-techspike
