@@ -14,3 +14,6 @@ services:
       COSMOS_KEY: ${COSMOS_KEY}
       COSMOS_DATABASE: ${COSMOS_DATABASE}
       COSMOS_CONTAINER: ${COSMOS_CONTAINER}
+      LAND_ENDPOINT: ${LAND_ENDPOINT:- https://environment.data.gov.uk/arcgis/rest/services/RPA/}
+      AHWR_ENDPOINT: ${AHWR_ENDPOINT:- http://host.docker.internal:3001/api/}
+      AHWR_PAYMENT_ENDPOINT: ${AHWR_PAYMENT_ENDPOINT:- http://host.docker.internal:3005/api/}

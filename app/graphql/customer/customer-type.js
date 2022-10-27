@@ -15,8 +15,10 @@ const customerType = new GraphQLObjectType({
     address: { type: GraphQLString, description: 'Customers address' },
     createdOn: { type: GraphQLString, description: 'The date the customer was created' },
     updatedOn: { type: GraphQLString, description: 'The date the customer was last updated' },
-    schemes: { args: { name: { type: GraphQLString } }, type: new GraphQLList(schemeType), description: 'The schemes the customer is enrolled in' },
-    history: { type: new GraphQLList(historyType), description: 'The history of the customer' }
+    schemes: { args: { name: { type: GraphQLString } }, type: new GraphQLList(schemeType), description: 'The schemes the customer is enrolled in. The schemes can also be filtered by scheme name' },
+    history: { type: new GraphQLList(historyType), description: 'The history of the customer' },
+    parcels: { type: GraphQLString, description: 'The parcels of the customer as a json string.' },
+    payments: { type: GraphQLString, description: 'The payments of the customer as a json string.' }
   })
 })
 

@@ -1,6 +1,7 @@
 const Joi = require('joi')
 const cosmosConfig = require('./cosmos')
 const storageConfig = require('./storage')
+const apiConfig = require('./api')
 
 const schema = Joi.object({
   port: Joi.number().default(4001),
@@ -22,5 +23,6 @@ if (error) {
 
 value.cosmosConfig = cosmosConfig
 value.storageConfig = storageConfig
+value.apiConfig = apiConfig
 
 module.exports = value

@@ -5,7 +5,9 @@ const historyType = new GraphQLObjectType({
   name: 'History',
   fields: () => ({
     EventType: { type: GraphQLString },
-    EventRaised: { type: GraphQLString }
+    EventRaised: { type: GraphQLString },
+    Payload: { type: GraphQLString },
+    Status: { type: GraphQLString }
   })
 })
 
