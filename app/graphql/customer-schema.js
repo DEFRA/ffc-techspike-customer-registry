@@ -1,6 +1,7 @@
 const graphql = require('graphql')
 const { GraphQLObjectType, GraphQLNonNull, GraphQLList, GraphQLInt, GraphQLString, GraphQLSchema } = graphql
 const customerType = require('./customer/customer-type')
+const customerSearchType = require('./customer/customer-search-type')
 const customerTypes = require('./customer/customers-type')
 const customerResolver = require('./customer/customer-resolver')
 const customersResolver = require('./customer/customers-resolver')
@@ -28,7 +29,7 @@ const schema = new GraphQLSchema({
         resolve: (parent, args) => customersResolver(parent, args)
       },
       searchCustomers: {
-        type: new GraphQLList(customerType),
+        type: customerSearchType,
         description: 'Get a list of customers via search',
         args: {
           searchString: { type: new GraphQLNonNull(GraphQLString), description: 'The search string' },
