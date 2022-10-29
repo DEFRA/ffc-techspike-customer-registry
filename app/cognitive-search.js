@@ -4,7 +4,7 @@ const { endpoint, key, index } = require('./config').cognitiveSearchConfig
 const indexClient = new SearchIndexClient(endpoint, new AzureKeyCredential(key))
 
 const searchQuery = async (searchString, searchFields = [], select = []) => {
-  const searchResults = []
+  let searchResults = []
   let count = 0
   let facets = []
   if (searchString.length) {
@@ -29,9 +29,14 @@ const searchQuery = async (searchString, searchFields = [], select = []) => {
       }
     })
     count = searchQueryResults.count
-    console.log(`Search facets: ${JSON.stringify(facets)}`)
-    console.log(`Result count: ${count}`)
   }
+
+  searchResults = searchResults.map(customer => {
+    return {
+      ...customer,
+      schemes: customer.schemes.map(scheme => JSON.parse(scheme))
+    }
+  })
 
   return { searchResults, facets, count }
 }

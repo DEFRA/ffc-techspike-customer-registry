@@ -15,7 +15,6 @@ const getApplication = async (reference) => {
 
 const getPayments = async (reference) => {
   const url = `${ahwrPaymentEndpoint}payment/${reference}`
-  console.log(url)
   const payment = await base.get(url)
   return payment
 }
