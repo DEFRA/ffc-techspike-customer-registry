@@ -3,14 +3,13 @@ const { endpoint, key, index } = require('./config').cognitiveSearchConfig
 
 const indexClient = new SearchIndexClient(endpoint, new AzureKeyCredential(key))
 
-const searchQuery = async (searchString, searchFields = []) => {
+const searchQuery = async (searchString, searchFields = [], select = []) => {
   const searchResults = []
   if (searchString.length) {
     const searchClient = indexClient.getSearchClient(index)
-    console.log('Query #1 - search everything:')
     const searchOptions = {
       includeTotalCount: true,
-      select: ['sbi', 'firstname', 'lastname', 'email', 'company', 'phone', 'address'],
+      select,
       searchFields
     }
 

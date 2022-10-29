@@ -34,7 +34,7 @@ const schema = new GraphQLSchema({
           searchString: { type: new GraphQLNonNull(GraphQLString), description: 'The search string' },
           searchFields: { type: new GraphQLList(GraphQLString), description: 'The search fields' }
         },
-        resolve: (parent, args) => customerSearchResolver(parent, args)
+        resolve: (parent, args, context, info) => customerSearchResolver(parent, args, context, info)
       }
     }
   })
