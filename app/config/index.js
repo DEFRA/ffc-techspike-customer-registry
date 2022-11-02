@@ -1,6 +1,7 @@
 const Joi = require('joi')
 const cosmosConfig = require('./cosmos')
 const storageConfig = require('./storage')
+const cognitiveSearchConfig = require('./cognitive-search')
 const apiConfig = require('./api')
 
 const schema = Joi.object({
@@ -24,5 +25,6 @@ if (error) {
 value.cosmosConfig = cosmosConfig
 value.storageConfig = storageConfig
 value.apiConfig = apiConfig
+value.cognitiveSearchConfig = cognitiveSearchConfig
 
 module.exports = value

@@ -17,3 +17,6 @@ services:
       LAND_ENDPOINT: ${LAND_ENDPOINT:- https://environment.data.gov.uk/arcgis/rest/services/RPA/}
       AHWR_ENDPOINT: ${AHWR_ENDPOINT:- http://host.docker.internal:3001/api/}
       AHWR_PAYMENT_ENDPOINT: ${AHWR_PAYMENT_ENDPOINT:- http://host.docker.internal:3005/api/}
+      SEARCH_ENDPOINT: ${SEARCH_ENDPOINT}
+      SEARCH_KEY: ${SEARCH_KEY}
+      SEARCH_INDEX: ${SEARCH_INDEX}

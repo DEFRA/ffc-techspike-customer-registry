@@ -39,13 +39,11 @@ module.exports = async (parent, args, context, info) => {
 
     if (checkFields(info, 'parcels')) {
       const parcels = await getParcels(sbi)
-      console.log(parcels, sbi)
       customer.parcels = JSON.stringify(parcels)
     }
 
     if (checkFields(info, 'payments')) {
       const payments = await getPayments('VV-5877-18C1')
-      console.log(payments)
       customer.payments = JSON.stringify(payments)
     }
   }
