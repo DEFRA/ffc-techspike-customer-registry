@@ -24,7 +24,7 @@
     "@hapi/inert": "^6.0.3",
     "@hapi/vision": "^6.1.0",
     "@hapi/wreck": "^17.1.0",
-    "applicationinsights": "^2.2.1",
+    "applicationinsights": "^2.7.0",
     "cockatiel": "^3.0.0",
     "graphi": "^9.0.2",
     "graphql-fields": "^2.0.3",
