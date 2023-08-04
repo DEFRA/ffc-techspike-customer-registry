@@ -28,7 +28,7 @@
     "cockatiel": "^3.0.0",
     "graphi": "^9.0.2",
     "graphql-fields": "^2.0.3",
-    "joi": "^17.4.2",
+    "joi": "^17.9.2",
     "moment": "^2.29.4"
   },
   "devDependencies": {
